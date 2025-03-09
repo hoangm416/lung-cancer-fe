@@ -8,8 +8,9 @@ import ManageRestaurantPage from "./pages/ManageRestaurantPage";
 import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
 import OrderStatusPage from "./pages/OrderStatusPage";
-import AboutUs from "./pages/AboutUs";
-import Question from "./pages/Question";
+import AboutUs from "./pages/AIModel";
+import Question from "./pages/HealthRecord";
+import Research from "./pages/Research";
 
 const AppRoutes = () => {
   return (
@@ -40,10 +41,10 @@ const AppRoutes = () => {
         }
       />
       <Route
-        path="/about-us"
+        path="/research"
         element={
           <Layout>
-            <AboutUs />
+            <Research />
           </Layout>
         }
       />
@@ -52,6 +53,14 @@ const AppRoutes = () => {
         element={
           <Layout>
             <Question />
+          </Layout>
+        }
+      />
+      <Route
+        path="/about-us"
+        element={
+          <Layout>
+            <AboutUs />
           </Layout>
         }
       />
