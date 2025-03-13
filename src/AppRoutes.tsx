@@ -8,9 +8,9 @@ import ManageRestaurantPage from "./pages/ManageRestaurantPage";
 import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
 import OrderStatusPage from "./pages/OrderStatusPage";
-import AboutUs from "./pages/AIModel";
-import Question from "./pages/HealthRecord";
 import Research from "./pages/Research";
+import AIModel from "./pages/AIModel";
+import HealthRecord from "./pages/HealthRecord";
 
 const AppRoutes = () => {
   return (
@@ -49,18 +49,18 @@ const AppRoutes = () => {
         }
       />
       <Route
-        path="/question"
+        path="/record"
         element={
           <Layout>
-            <Question />
+            <HealthRecord />
           </Layout>
         }
       />
       <Route
-        path="/about-us"
+        path="/aimodel"
         element={
           <Layout>
-            <AboutUs />
+            <AIModel />
           </Layout>
         }
       />
