@@ -25,7 +25,7 @@ const Header = () => {
           {[
             { path: "/", label: "Thống kê", Icon: PieChartIcon },
             { path: "/research", label: "Nghiên cứu", Icon: BookIcon },
-            { path: "/question", label: "Hồ sơ", Icon: FileIcon },
+            { path: "/question", label: "Hồ sơ bệnh án", Icon: FileIcon },
             { path: "/about-us", label: "Dự đoán AI", Icon: BrainIcon },
           ].map(({ path, label, Icon }) => (
             <NavLink key={path} to={path} className={({ isActive }) =>

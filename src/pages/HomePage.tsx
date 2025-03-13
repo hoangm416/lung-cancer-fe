@@ -28,13 +28,13 @@ const HomePage = () => {
         <img src={landingImage} />
         <div className="flex flex-col items-center justify-center gap-4 text-center">
           <span className="font-bold text-3xl tracking-tighter">
-            Đặt đồ ăn nhanh chóng thuận tiện
+            AI dự đoán bệnh Ung thư phổi
           </span>
-          <span>
+          {/* <span>
             Tải ứng dụng HustFood để đặt hàng nhanh hơn và
             nhận được nhiều đề xuất hơn
-          </span>
-          <img src={appDownloadImage} />
+          </span> */}
+          {/* <img src={appDownloadImage} /> */}
         </div>
       </div>
     </div>

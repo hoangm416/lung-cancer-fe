@@ -4,61 +4,61 @@ const Question = () => {
     const [activeTab, setActiveTab] = useState('personal'); // Default active tab
     const [showAnswer, setShowAnswer] = useState(false)
     const tabs = [
-        { id: 'personal', label: 'Khách hàng' },
-        { id: 'payment', label: 'Thanh toán' },
-        { id: 'voucher', label: 'Khuyến mãi' },
-        { id: 'partner', label: 'Đăng ký làm đối tác' },
-        { id: 'driver', label: 'Tài xế' },
+        { id: 'personal', label: 'Thông tin cá nhân' },
+        { id: 'payment', label: 'Kết quả xét nghiệm' },
+        { id: 'voucher', label: 'Kết quả dự đoán AI' },
+        //{ id: 'partner', label: 'Đăng ký làm đối tác' },
+        //{ id: 'driver', label: 'Tài xế' },
     ];
 
     const question = [
         {
-            id: 'personal', 
-            question: [
-                'Khi nào tôi có thể hủy đơn hàng?',
-                'Làm thế nào để tạo tài khoản HustFood?',
-            ], 
-            answer: [
-                'Bạn có thể hủy đơn hàng trước khi đơn hàng của bạn được xác nhận hoặc đang trong quá trình vận chuyển. Tuy nhiên, nếu đơn hàng đã được xác nhận và gửi đi, bạn sẽ không thể hủy đơn mà cần phải liên hệ với dịch vụ khách hàng để được hỗ trợ thêm.',
-                `Để tạo tài khoản trên HustFood, bạn cần làm theo các bước sau:
-                    Bước 1: Truy cập vào trang web hoặc ứng dụng HustFood.
-                    Bước 2: Chọn "Đăng ký" hoặc "Tạo tài khoản".
-                    Bước 3: Nhập thông tin yêu cầu như tên, email, số điện thoại và mật khẩu.
-                    Bước 4: Xác nhận thông tin và hoàn tất việc đăng ký qua email hoặc SMS (nếu có yêu cầu).
-                    Bước 5: Sau khi đăng ký xong, bạn có thể đăng nhập và bắt đầu sử dụng dịch vụ.`
-            ]
+            // id: 'personal', 
+            // question: [
+            //     'Khi nào tôi có thể hủy đơn hàng?',
+            //     'Làm thế nào để tạo tài khoản HustFood?',
+            // ], 
+            // answer: [
+            //     'Bạn có thể hủy đơn hàng trước khi đơn hàng của bạn được xác nhận hoặc đang trong quá trình vận chuyển. Tuy nhiên, nếu đơn hàng đã được xác nhận và gửi đi, bạn sẽ không thể hủy đơn mà cần phải liên hệ với dịch vụ khách hàng để được hỗ trợ thêm.',
+            //     `Để tạo tài khoản trên HustFood, bạn cần làm theo các bước sau:
+            //         Bước 1: Truy cập vào trang web hoặc ứng dụng HustFood.
+            //         Bước 2: Chọn "Đăng ký" hoặc "Tạo tài khoản".
+            //         Bước 3: Nhập thông tin yêu cầu như tên, email, số điện thoại và mật khẩu.
+            //         Bước 4: Xác nhận thông tin và hoàn tất việc đăng ký qua email hoặc SMS (nếu có yêu cầu).
+            //         Bước 5: Sau khi đăng ký xong, bạn có thể đăng nhập và bắt đầu sử dụng dịch vụ.`
+            // ]
         },
         {
-            id: 'payment', 
-            question: [
-                'HustFood hiện tại có những phương thức thanh toán nào?',
-                'Tôi muốn thêm/ thay đổi phương thức thanh toán?'
-            ],
-            answer: [
-                `Hiện tại, HustFood cung cấp các phương thức thanh toán phổ biến sau:
-                    Cách 1: Thanh toán qua thẻ tín dụng/ghi nợ: Bạn có thể thanh toán đơn hàng bằng các thẻ tín dụng hoặc thẻ ghi nợ như Visa, MasterCard, hoặc các loại thẻ quốc tế khác.
-                    Cách 2: Thanh toán qua ví điện tử: HustFood hỗ trợ thanh toán qua các ví điện tử như MoMo, ZaloPay, hoặc ViettelPay, giúp giao dịch nhanh chóng và thuận tiện.
-                    Cách 3: Thanh toán khi nhận hàng (COD): Đây là phương thức thanh toán khi bạn nhận được đơn hàng trực tiếp từ tài xế HustFood. Bạn có thể thanh toán bằng tiền mặt hoặc thẻ tại thời điểm giao hàng.
-                    Cách 3: Thanh toán qua chuyển khoản ngân hàng: Nếu bạn có nhu cầu, một số dịch vụ có thể hỗ trợ thanh toán qua chuyển khoản ngân hàng trực tiếp.
-                Các phương thức thanh toán có thể thay đổi tùy theo chương trình khuyến mãi hoặc yêu cầu của từng khu vực, vì vậy bạn nên kiểm tra lại trong ứng dụng hoặc trang web của HustFood để biết thông tin mới nhất.`,
-                `Vào phần "Cài đặt tài khoản" hoặc "Phương thức thanh toán": 
-                    Bước 1: Tìm mục "Thanh toán" hoặc "Cài đặt tài khoản" trong menu của tài khoản cá nhân.
-                    Bước 2: Chọn "Thêm phương thức thanh toán" hoặc "Thay đổi phương thức thanh toán": Bạn sẽ thấy các tùy chọn để thêm hoặc thay đổi thông tin thanh toán.
-                    Bước 3: Cập nhật thông tin thanh toán: Nhập các chi tiết cần thiết, ví dụ như thẻ tín dụng, thẻ ghi nợ, hoặc phương thức thanh toán khác (ví dụ: ví điện tử).
-                    Bước 4: Lưu thay đổi: Sau khi cập nhật thông tin, nhớ lưu lại thay đổi để hoàn tất quá trình.
-                Nếu có bất kỳ vấn đề gì trong quá trình thay đổi phương thức thanh toán, bạn có thể liên hệ với dịch vụ khách hàng của HustFood để được hỗ trợ.`
-            ]
+            // id: 'payment', 
+            // question: [
+            //     'HustFood hiện tại có những phương thức thanh toán nào?',
+            //     'Tôi muốn thêm/ thay đổi phương thức thanh toán?'
+            // ],
+            // answer: [
+            //     `Hiện tại, HustFood cung cấp các phương thức thanh toán phổ biến sau:
+            //         Cách 1: Thanh toán qua thẻ tín dụng/ghi nợ: Bạn có thể thanh toán đơn hàng bằng các thẻ tín dụng hoặc thẻ ghi nợ như Visa, MasterCard, hoặc các loại thẻ quốc tế khác.
+            //         Cách 2: Thanh toán qua ví điện tử: HustFood hỗ trợ thanh toán qua các ví điện tử như MoMo, ZaloPay, hoặc ViettelPay, giúp giao dịch nhanh chóng và thuận tiện.
+            //         Cách 3: Thanh toán khi nhận hàng (COD): Đây là phương thức thanh toán khi bạn nhận được đơn hàng trực tiếp từ tài xế HustFood. Bạn có thể thanh toán bằng tiền mặt hoặc thẻ tại thời điểm giao hàng.
+            //         Cách 3: Thanh toán qua chuyển khoản ngân hàng: Nếu bạn có nhu cầu, một số dịch vụ có thể hỗ trợ thanh toán qua chuyển khoản ngân hàng trực tiếp.
+            //     Các phương thức thanh toán có thể thay đổi tùy theo chương trình khuyến mãi hoặc yêu cầu của từng khu vực, vì vậy bạn nên kiểm tra lại trong ứng dụng hoặc trang web của HustFood để biết thông tin mới nhất.`,
+            //     `Vào phần "Cài đặt tài khoản" hoặc "Phương thức thanh toán": 
+            //         Bước 1: Tìm mục "Thanh toán" hoặc "Cài đặt tài khoản" trong menu của tài khoản cá nhân.
+            //         Bước 2: Chọn "Thêm phương thức thanh toán" hoặc "Thay đổi phương thức thanh toán": Bạn sẽ thấy các tùy chọn để thêm hoặc thay đổi thông tin thanh toán.
+            //         Bước 3: Cập nhật thông tin thanh toán: Nhập các chi tiết cần thiết, ví dụ như thẻ tín dụng, thẻ ghi nợ, hoặc phương thức thanh toán khác (ví dụ: ví điện tử).
+            //         Bước 4: Lưu thay đổi: Sau khi cập nhật thông tin, nhớ lưu lại thay đổi để hoàn tất quá trình.
+            //     Nếu có bất kỳ vấn đề gì trong quá trình thay đổi phương thức thanh toán, bạn có thể liên hệ với dịch vụ khách hàng của HustFood để được hỗ trợ.`
+            // ]
         },
         {
-            id: 'voucher', 
-            question: [
-                'Voucher có thể sử dụng cho tất cả các đơn hàng không?',
-                'Trong tương lai có thêm voucher không?'
-            ],
-            answer: [
-                "Voucher có thể có các điều kiện sử dụng cụ thể, như giá trị đơn hàng tối thiểu, giới hạn cho một số sản phẩm, hoặc chỉ áp dụng cho các đơn hàng trong khu vực nhất định. Bạn nên đọc kỹ điều khoản sử dụng voucher trước khi áp dụng.",
-                "Hiện tại, HustFood có thể sẽ phát hành thêm các voucher trong tương lai, tùy thuộc vào các chương trình khuyến mãi hoặc sự kiện đặc biệt. Để không bỏ lỡ các ưu đãi mới, bạn có thể theo dõi thông tin qua các kênh truyền thông chính thức của HustFood như website, ứng dụng, hoặc các email khuyến mãi."
-            ]
+            // id: 'voucher', 
+            // question: [
+            //     'Voucher có thể sử dụng cho tất cả các đơn hàng không?',
+            //     'Trong tương lai có thêm voucher không?'
+            // ],
+            // answer: [
+            //     "Voucher có thể có các điều kiện sử dụng cụ thể, như giá trị đơn hàng tối thiểu, giới hạn cho một số sản phẩm, hoặc chỉ áp dụng cho các đơn hàng trong khu vực nhất định. Bạn nên đọc kỹ điều khoản sử dụng voucher trước khi áp dụng.",
+            //     "Hiện tại, HustFood có thể sẽ phát hành thêm các voucher trong tương lai, tùy thuộc vào các chương trình khuyến mãi hoặc sự kiện đặc biệt. Để không bỏ lỡ các ưu đãi mới, bạn có thể theo dõi thông tin qua các kênh truyền thông chính thức của HustFood như website, ứng dụng, hoặc các email khuyến mãi."
+            // ]
         },
         {
             id: 'partner', 

@@ -6,17 +6,17 @@ const MobileNavLinks = () => {
   const { logout } = useAuth0();
   return (
     <>
-      <Link
+      {/* <Link
         to="/order-status"
         className="flex bg-white items-center font-bold hover:text-orange-500"
       >
         Đơn hàng
-      </Link>
+      </Link> */}
       <Link
         to="/manage-restaurant"
         className="flex bg-white items-center font-bold hover:text-orange-500"
       >
-        Nhà hàng của tôi
+        Quản lý bệnh nhân
       </Link>
       <Link
         to="/user-profile"
