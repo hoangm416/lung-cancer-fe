@@ -13,7 +13,7 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1800px",
       },
     },
     extend: {
@@ -29,7 +29,7 @@ export default {
           foreground: "hsl(0, 0%, 100%)", // Chữ trắng trên nền xanh lá
         },
         secondary: {
-          DEFAULT: "hsl(263, 70%, 50%)", // **Tím nhạt** – vẫn giữ màu này để cân bằng và tạo sự chuyên nghiệp
+          DEFAULT: "hsl(142, 65%, 75%)", 
           foreground: "hsl(0, 0%, 100%)",
         },
         destructive: {

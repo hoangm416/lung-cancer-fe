@@ -1,9 +1,9 @@
-import { BaseTable } from "@/components/BaseTable";
+// import { BaseTable } from "@/components/BaseTable";
 
 const AIModel = () => {
     return (
         <div>
-            <BaseTable />
+            Chưa có gì
         </div>
     );
 };

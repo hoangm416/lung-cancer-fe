@@ -2,16 +2,16 @@ import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <div className="bg-white py-5 border-t-2 border-primary">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+    <div className="bg-white py-3 border-t-2 border-primary">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         {/* Logo and Links */}
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           <h1 className="text-3xl font-bold text-primary">LungTrack</h1>
           <div className="flex flex-col space-y-2 text-gray-700">
-            {/* <a href="about-us" className="hover:text-blue-600">Về LungTrack</a>
-            <a href="about-us" className="hover:text-blue-600">Chính sách và điều khoản</a> */}
+            <a href="about-us" className="hover:text-blue-600">Về LungTrack</a>
+            <a href="about-us" className="hover:text-blue-600">Chính sách và điều khoản</a>
           </div>
-        </div>
+        </div> */}
 
         {/* Contact Information */}
         <div className="space-y-4 text-gray-700">

@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -32,7 +31,6 @@ export function PaginationRender({
   tableIndex,
   isSearchData,
 }: PaginationRenderProps) {
-  const { t } = useTranslation()
   const { pageSize } = table.getState().pagination
 
   const [pageIndex, setPageIndex] = useState<number>(0)
@@ -48,20 +46,14 @@ export function PaginationRender({
   return (
     <div className="flex w-full flex-col justify-between gap-4 overflow-auto px-2 py-1 sm:flex-row sm:items-center sm:gap-8">
       <div className="flex-1 whitespace-nowrap text-sm text-muted-foreground">
-        {t('table:paginationSelected', {
-          min: pageIndex * pageSize > totalAttrs ? 1 : pageIndex * pageSize + 1,
-          max:
-            (pageIndex + 1) * pageSize > totalAttrs
-              ? totalAttrs
-              : (pageIndex + 1) * pageSize,
-          total: totalAttrs,
-        })}
+        {`Bản ghi ${pageIndex * pageSize > totalAttrs ? 1 : pageIndex * pageSize + 1}-${(pageIndex + 1) * pageSize > totalAttrs ? totalAttrs : (pageIndex + 1) * pageSize} 
+        của ${totalAttrs} bản ghi`}
       </div>
       <div className="flex flex-row items-center gap-4 lg:gap-4">
         <DropdownPageLimit table={table} />
         {/* <div className="flex items-center">{t('table:pagination')}</div> */}
         <div className="flex w-[100px] items-center justify-center whitespace-nowrap text-sm text-muted-foreground">
-          {t('table:pagination')}
+          Bản ghi / trang
         </div>
         <div className="flex items-center space-x-4">
           <Button

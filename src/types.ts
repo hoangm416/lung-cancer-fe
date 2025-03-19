@@ -109,3 +109,4 @@ export type Record = {
   Year_of_Death?: string;
   Year_of_Diagnosis?: number;
 };
+

@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import { useTranslation } from 'react-i18next'
 import {
   createColumnHelper,
   useReactTable,
@@ -28,12 +27,13 @@ import {
 } from '../ui/table'
 
 import { ScrollArea, ScrollBar } from '../ui/scroll-area' 
-import { Button } from '../ui/button'
+// import { Button } from '../ui/button'
 import { Checkbox } from '../ui/checkbox' 
 import { useSpinDelay } from 'spin-delay'
 
 import { cn } from '@/lib/utils'
 import { PaginationRender } from './Pagination/PaginationRender'
+import { ExportTable } from './ExportTable/ExportTable'
 
 declare module '@tanstack/table-core' {
   interface ColumnMeta<TData, TValue> {
@@ -101,7 +101,6 @@ export function BaseTable<T extends Record<string, any>>({
   hasBorderRight,
   limit = 10000,
 }: BaseTableProps<T>) {
-  const { t } = useTranslation()
   const ref = useRef(null)
 
   const tableIndex = useRef(0)
@@ -125,7 +124,7 @@ export function BaseTable<T extends Record<string, any>>({
               // table.toggleAllRowsSelected(!!value)
               table.toggleAllPageRowsSelected(!!value)
             }}
-            aria-label="Select all"
+            aria-label="Chọn tất cả"
           />
         </div>
       ),
@@ -143,9 +142,9 @@ export function BaseTable<T extends Record<string, any>>({
     })
   }
 
-  // if (isCheckbox && !columns.find(col => col.id === 'select')) {
-  //   addCheckbox()
-  // }
+  if (isCheckbox && !columns.find(col => col.id === 'select')) {
+    addCheckbox()
+  }
 
   const table = useReactTable({
     data,
@@ -198,6 +197,34 @@ export function BaseTable<T extends Record<string, any>>({
 
   return (
     <div className="h-[calc(100vh_-_220px)]">
+      <div
+        ref={ref}
+        className="flex w-full flex-col gap-4 font-bold text-primary md:flex-row md:items-center md:justify-between"
+      >
+        <div>
+          Kết quả tìm kiếm {'('}
+          {totalAttributes || 0}
+          {')'}
+          {Object.keys(rowSelection).length > 0 && (
+            <span>
+              {' '}
+              - Đã chọn {'('}
+              {Object.keys(rowSelection).length || 0}
+              {')'}
+            </span>
+          )}
+        </div>
+        <div className="flex flex-row">
+          {utilityButton}
+          <ExportTable
+            refComponent={ref}
+            rowSelection={rowSelection}
+            fileNameExcel={fileNameExcel}
+            formatExcel={formatExcel}
+          />
+        </div>
+      </div>
+
       <div className="my-4 h-[90%] overflow-x-auto">
         <ScrollArea
           className={cn(
@@ -292,8 +319,8 @@ export function BaseTable<T extends Record<string, any>>({
                         colSpan={999}
                         className="h-[600px] text-center"
                       >
-                        {showProgress && t('table:loading')}
-                        {!isLoading && (onDataText || t('error:no_data'))}
+                        {showProgress && "Đang tải dữ liệu..."}
+                        {!isLoading && (onDataText || "Không có dữ liệu")}
                       </TableCell>
                     </TableRow>
                   )}
