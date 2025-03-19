@@ -29,6 +29,7 @@
     "caniuse-lite": "^1.0.30001683",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^12.5.0",
     "lucide-react": "^0.311.0",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
