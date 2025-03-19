@@ -25,8 +25,8 @@ const Header = () => {
           {[
             { path: "/", label: "Thống kê", Icon: PieChartIcon },
             { path: "/research", label: "Nghiên cứu", Icon: BookIcon },
-            { path: "/question", label: "Hồ sơ bệnh án", Icon: FileIcon },
-            { path: "/about-us", label: "Dự đoán AI", Icon: BrainIcon },
+            { path: "/record", label: "Hồ sơ", Icon: FileIcon },
+            { path: "/aimodel", label: "Dự đoán AI", Icon: BrainIcon },
           ].map(({ path, label, Icon }) => (
             <NavLink key={path} to={path} className={({ isActive }) =>
               `m-1 flex h-[40px] w-[135px] cursor-pointer items-center justify-center gap-x-2 rounded-md transition-colors
