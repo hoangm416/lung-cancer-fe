@@ -1,5 +1,3 @@
-import landingImage from "../assets/landing.png";
-import appDownloadImage from "../assets/appDownload.png";
 import SearchBar, { SearchForm } from "@/components/SearchBar";
 import { useNavigate } from "react-router-dom";
 
@@ -25,7 +23,6 @@ const HomePage = () => {
         />
       </div> */}
       <div className="grid md:grid-cols-2 gap-5">
-        <img src={landingImage} />
         <div className="flex flex-col items-center justify-center gap-4 text-center">
           <span className="font-bold text-3xl tracking-tighter">
             AI dự đoán bệnh Ung thư phổi

@@ -11,6 +11,7 @@ import OrderStatusPage from "./pages/OrderStatusPage";
 import Research from "./pages/Research";
 import AIModel from "./pages/AIModel";
 import HealthRecord from "./pages/HealthRecord";
+import RecordDetail from "./pages/RecordDetail";
 
 const AppRoutes = () => {
   return (
@@ -53,6 +54,14 @@ const AppRoutes = () => {
         element={
           <Layout>
             <HealthRecord />
+          </Layout>
+        }
+      />
+      <Route
+        path="/record/:sample_id"
+        element={
+          <Layout>
+            <RecordDetail />
           </Layout>
         }
       />

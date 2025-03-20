@@ -4,7 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import {
   LucidePieChart as PieChartIcon,
   LucideClipboardList as FileIcon,
-  LucideBrain as BrainIcon,
   LucideBookOpen as BookIcon,
 } from 'lucide-react';
 
@@ -26,7 +25,6 @@ const Header = () => {
             { path: "/", label: "Thống kê", Icon: PieChartIcon },
             { path: "/research", label: "Nghiên cứu", Icon: BookIcon },
             { path: "/record", label: "Hồ sơ", Icon: FileIcon },
-            { path: "/aimodel", label: "Dự đoán AI", Icon: BrainIcon },
           ].map(({ path, label, Icon }) => (
             <NavLink key={path} to={path} className={({ isActive }) =>
               `m-1 flex h-[40px] w-[135px] cursor-pointer items-center justify-center gap-x-2 rounded-md transition-colors

@@ -3,6 +3,7 @@ import { createColumnHelper, type ColumnDef } from '@tanstack/react-table';
 // import { useTranslation } from 'react-i18next';
 import { BaseTable } from '@/components/BaseTable';
 import { useGetRecords } from '@/api/LungRecordApi'; 
+import { NavLink } from 'react-router-dom';
 // import { Record } from '@/types';
 
 const HealthRecord = () => {
@@ -65,61 +66,72 @@ const HealthRecord = () => {
       }),
       columnHelper.accessor('Patient_ID', {
         id: 'patient_id',
-        header: () => <span>Patient ID</span>,
+        header: () => <span>Mã bệnh nhân</span>,
         cell: info => info.getValue() ?? 'N/A',
         footer: info => info.column.id,
       }),
       columnHelper.accessor('Sample_ID', {
         id: 'sample_id',
-        header: () => <span>Sample ID</span>,
-        cell: info => info.getValue() ?? 'N/A',
+        header: () => <span>Mã mẫu bệnh phẩm</span>,
+        cell: info => {
+          const sample_id = info.row.original.Sample_ID;
+          return (
+            <NavLink 
+              className={'hover:bg-primary'}
+              to={`/record/${sample_id}`}
+              state={{ record: info.row.original }} // Truyền dữ liệu record qua state
+            >
+              {info.getValue() ?? 'N/A'}
+            </NavLink>
+          )
+        },
         footer: info => info.column.id,
       }),
       columnHelper.accessor('Diagnosis_Age', {
         id: 'diagnosis_age',
-        header: () => <span>Diagnosis Age</span>,
+        header: () => <span>Tuổi</span>,
         cell: info => info.getValue() ?? 'N/A',
         footer: info => info.column.id,
       }),
       columnHelper.accessor('Cancer_Type', {
         id: 'cancer_type',
-        header: () => <span>Cancer Type</span>,
+        header: () => <span>Loại ung thư</span>,
         cell: info => info.getValue() ?? 'N/A',
         footer: info => info.column.id,
       }),
       columnHelper.accessor('Primary_Diagnosis', {
         id: 'primary_diagnosis',
-        header: () => <span>Primary Diagnosis</span>,
+        header: () => <span>Loại mô bệnh học</span>,
         cell: info => info.getValue() ?? 'N/A',
         footer: info => info.column.id,
       }),
       columnHelper.accessor('AJCC_Pathologic_Stage', {
         id: 'ajcc_stage',
-        header: () => <span>AJCC Stage</span>,
+        header: () => <span>Giai đoạn ung thư</span>,
         cell: info => info.getValue() ?? 'N/A',
         footer: info => info.column.id,
       }),
       columnHelper.accessor('Biopsy_Site', {
         id: 'biopsy_site',
-        header: () => <span>Biopsy Site</span>,
+        header: () => <span>Vị trí sinh thiết</span>,
         cell: info => info.getValue() ?? 'N/A',
         footer: info => info.column.id,
       }),
       columnHelper.accessor('Mutation_Count', {
         id: 'mutation_count',
-        header: () => <span>Mutation Count</span>,
+        header: () => <span>Số lượng đột biến</span>,
         cell: info => info.getValue() ?? 'N/A',
         footer: info => info.column.id,
       }),
       columnHelper.accessor('Overall_Survival_Months', {
         id: 'survival_months',
-        header: () => <span>Overall Survival (Months)</span>,
+        header: () => <span>Số tháng sống sót</span>,
         cell: info => info.getValue() ?? 'N/A',
         footer: info => info.column.id,
       }),
       columnHelper.accessor('Patients_Vital_Status', {
         id: 'vital_status',
-        header: () => <span>Vital Status</span>,
+        header: () => <span>Tình trạng</span>,
         cell: info => info.getValue() ?? 'N/A',
         footer: info => info.column.id,
       }),
